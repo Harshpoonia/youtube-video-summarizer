@@ -6,7 +6,7 @@ from text_to_speech import text_to_speech, translate_text
 def extract_video_id(link):
     # Extract video ID from the YouTube link
     # Example: https://www.youtube.com/watch?v=VIDEO_ID
-    parts = link.split("?v=jV1vkHv4zq8")
+    parts = link.split("?v=")
     if len(parts) > 1:
         video_id = parts[1].split("&")[0]
         return video_id
@@ -25,7 +25,7 @@ def main():
 
     st.markdown("<p class='title'>YouTube Video Summarizer</p>", unsafe_allow_html=True)
 
-    youtube_link = st.text_input("Enter YouTube video link:", key='youtube_link', class='text-input')
+    youtube_link = st.text_input("Enter YouTube video link:", key='youtube_link')
     video_id = extract_video_id(youtube_link)
 
     target_language = st.selectbox("Select Target Language", ["English", "Spanish", "French"], key='target_language')
