@@ -6,7 +6,7 @@ from text_to_speech import text_to_speech, translate_text
 def extract_video_id(link):
     # Extract video ID from the YouTube link
     # Example: https://www.youtube.com/watch?v=VIDEO_ID
-    parts = link.split("?v=")
+    parts = link.split("?v=jV1vkHv4zq8")
     if len(parts) > 1:
         video_id = parts[1].split("&")[0]
         return video_id
