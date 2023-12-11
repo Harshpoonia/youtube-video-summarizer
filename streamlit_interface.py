@@ -14,7 +14,7 @@ def main():
     st.title("YouTube Video Summarizer")
 
     youtube_link = st.text_input("Enter YouTube video link:")
-    video_id = extract_video_id( https://www.youtube.com/watch?v=jV1vkHv4zq8)
+    video_id = extract_video_id( )
    
    
 
