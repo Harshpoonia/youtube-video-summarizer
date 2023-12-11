@@ -30,7 +30,7 @@ def main():
 
     target_language = st.selectbox("Select Target Language", ["English", "Spanish", "French"], key='target_language')
 
-    if st.button("Summarize and Convert to Speech", class='button'):
+    if st.button("Summarize and Convert to Speech"):
         if youtube_link:
             # Fetch video transcript or content from YouTube API
             video_content = get_video_details(video_id)  # Replace with actual fetched data from YouTube API
