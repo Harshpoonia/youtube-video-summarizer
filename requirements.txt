@@ -1,0 +1,14 @@
+
+---
+
+### 3. Add requirements.txt
+
+Example:
+
+```txt
+streamlit
+youtube-transcript-api
+gtts
+nltk
+transformers
+torch
