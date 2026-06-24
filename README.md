@@ -23,7 +23,6 @@ An AI-powered application that generates concise summaries from YouTube videos u
 ```text
 youtube-video-summarizer/
 │
-├── app.py
 ├── streamlitApp.py
 ├── YouTubeAPIModule.py
 ├── summarization.py
