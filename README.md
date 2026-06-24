@@ -1,34 +1,32 @@
-# YouTube Video Summarizer & Speech Generator
+# 🎥 YouTube Video Summarizer & Speech Generator
 
-## Overview
+## 📖 Overview
 
 YouTube Video Summarizer & Speech Generator is a Python-based web application developed as a **BCA Minor Project**. The application extracts information from YouTube videos using the YouTube Data API, generates concise summaries using Natural Language Processing (NLP), and converts the generated summary into speech.
 
-The project demonstrates the integration of APIs, machine learning models, and web application development using Python.
+---
+
+## 🎯 Objectives
+
+* Extract information from YouTube videos
+* Generate concise summaries using NLP
+* Convert summaries into speech
+* Provide an interactive web interface
 
 ---
 
-## Objectives
+## ✨ Features
 
-* Extract information from YouTube videos.
-* Generate concise summaries using NLP techniques.
-* Convert text summaries into speech.
-* Provide a simple and interactive web interface for users.
-
----
-
-## Features
-
-* Accepts YouTube video URLs as input.
-* Extracts video information using YouTube Data API.
-* Generates automated text summaries.
-* Converts summaries into audio format (MP3).
-* Interactive web application built with Streamlit.
-* Simple and user-friendly interface.
+* 🔗 Accepts YouTube video URLs
+* 📺 Extracts video information using YouTube Data API
+* 📝 Generates automated text summaries
+* 🔊 Converts summaries into audio (MP3)
+* 🌐 Interactive Streamlit interface
+* ⚡ Simple and user-friendly workflow
 
 ---
 
-## Tech Stack
+## 🛠️ Tech Stack
 
 ### Programming Language
 
@@ -47,7 +45,7 @@ The project demonstrates the integration of APIs, machine learning models, and w
 
 ---
 
-## Project Structure
+## 📂 Project Structure
 
 ```text
 youtube-video-summarizer/
@@ -63,18 +61,18 @@ youtube-video-summarizer/
 
 ---
 
-## Working Process
+## ⚙️ Working Process
 
-1. User enters a YouTube video URL.
-2. The application extracts the video ID.
-3. Video information is retrieved using the YouTube Data API.
-4. NLP-based summarization is performed on the retrieved content.
-5. The generated summary is converted into speech.
-6. Audio output is provided to the user.
+1. 🔗 User enters a YouTube video URL
+2. 🆔 Video ID is extracted
+3. 📡 Video information is fetched using YouTube Data API
+4. 📝 NLP-based summarization is performed
+5. 🔊 Summary is converted to speech
+6. 🎧 Audio output is generated
 
 ---
 
-## Installation
+## 🚀 Installation
 
 ### Clone Repository
 
@@ -89,7 +87,7 @@ cd youtube-video-summarizer
 python -m venv venv
 ```
 
-Activate environment:
+### Activate Environment
 
 #### Windows
 
@@ -111,11 +109,11 @@ pip install -r requirements.txt
 
 ---
 
-## YouTube API Configuration
+## 🔑 YouTube API Configuration
 
 Obtain a YouTube Data API v3 key from Google Cloud Console.
 
-Replace the placeholder value in:
+Replace:
 
 ```python
 API_KEY = "YOUR_YOUTUBE_API_KEY"
@@ -125,61 +123,54 @@ with your own API key.
 
 ---
 
-## Running the Application
+## ▶️ Running the Application
 
 ```bash
 streamlit run StreamlitApp.py
 ```
 
-The application will launch in your default browser.
-
 ---
 
-## Learning Outcomes
-
-This project helped in understanding:
+## 📚 Learning Outcomes
 
 * API Integration
 * Natural Language Processing
 * Text Summarization
 * Text-to-Speech Systems
-* Python Application Development
-* Streamlit Web Applications
+* Streamlit Development
+* Python Programming
 * Software Modularization
 
 ---
 
-## Future Enhancements
+## 🔮 Future Enhancements
 
-* Transcript-based video summarization
-* Multi-language support
-* PDF export of summaries
-* Advanced NLP models
-* Cloud deployment
-* User authentication and history tracking
-
----
-
-## Academic Information
-
-**Project Type:** BCA Minor Project
-
-**Domain:** Natural Language Processing (NLP) / Web Application Development
-
-**Year:** 2023–2024
+* 🌍 Multi-language support
+* 📜 Transcript-based summarization
+* 📄 PDF export functionality
+* 🤖 Advanced NLP models
+* ☁️ Cloud deployment
+* 👤 User authentication
 
 ---
 
-## Author
+## 🎓 Academic Information
+
+* **Project Type:** BCA Minor Project
+* **Domain:** NLP & Web Application Development
+* **Academic Level:** Undergraduate Project
+
+---
+
+## 👨‍💻 Author
 
 **Harsh Poonia**
 
-MCA Student
-Thapar Institute of Engineering & Technology
+MCA Student, Thapar Institute of Engineering & Technology
 
-Interests:
+**Areas of Interest**
 
-* Data Analytics
-* Machine Learning
-* Artificial Intelligence
-* Software Development
+* 📊 Data Analytics
+* 🤖 Machine Learning
+* 🧠 Artificial Intelligence
+* 💻 Software Development
