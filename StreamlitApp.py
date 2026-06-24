@@ -4,18 +4,11 @@ from transformers import pipeline
 from gtts import gTTS
 import os
 
+from YouTubeAPIModule import extract_video_id, fetch_video_details
+
 # YouTube API Key - Replace with your API key
-API_KEY = "AIzaSyBS0Xeh4p4J1mPCOFK_FsIIP-jfZu6teIU"
+API_KEY = "<YOUR_API_KEY>"
 
-# Function to extract video ID from the YouTube link
-def extract_video_id(link):
-    # Your code to extract video ID
-    # ...
-
-# Function to fetch video details based on the video ID
-def fetch_video_details(video_id):
-    # Your code to fetch video details
-    # ...
 
 # Function to summarize text
 def summarize_text(text):

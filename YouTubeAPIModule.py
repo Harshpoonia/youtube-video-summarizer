@@ -2,7 +2,7 @@ from googleapiclient.discovery import build
 import re
 
 # Your API key obtained from Google Cloud Console
-API_KEY = "AIzaSyBS0Xeh4p4J1mPCOFK_FsIIP-jfZu6teIU"
+API_KEY = "<YOUR_API_KEY>"
 
 # Function to extract video ID from the YouTube link
 def extract_video_id(link):
