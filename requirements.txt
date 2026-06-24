@@ -1,14 +1,5 @@
-
----
-
-### 3. Add requirements.txt
-
-Example:
-
-```txt
 streamlit
-youtube-transcript-api
-gtts
-nltk
+google-api-python-client
 transformers
 torch
+gtts
