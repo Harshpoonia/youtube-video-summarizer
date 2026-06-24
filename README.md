@@ -1,43 +1,68 @@
-YouTube Video Summarizer
+# YouTube Video Summarizer
 
-AI-powered application that generates concise summaries from YouTube videos using transcript extraction, NLP summarization, and text-to-speech capabilities.
+An AI-powered application that generates concise summaries from YouTube videos using transcript extraction, Natural Language Processing (NLP), and text-to-speech conversion.
 
-Features
-Extract transcripts from YouTube videos
-Generate concise summaries automatically
-Convert summaries into speech
-Interactive Streamlit interface
-Easy-to-use workflow
-Tech Stack
-Python
-Streamlit
-YouTube Transcript API
-NLP
-gTTS (Google Text-to-Speech)
-Project Structure
-youtube-summarizer/
+## Features
+
+- Extract transcripts from YouTube videos
+- Generate automatic video summaries
+- Convert summaries into audio
+- User-friendly Streamlit interface
+- Fast and lightweight workflow
+
+## Tech Stack
+
+- Python
+- Streamlit
+- YouTube Transcript API
+- NLP
+- gTTS (Google Text-to-Speech)
+
+## Project Structure
+
+```text
+youtube-video-summarizer/
 │
+├── app.py
 ├── streamlitApp.py
 ├── YouTubeAPIModule.py
 ├── summarization.py
-├── text-to-speech.py
+├── text_to_speech_module.py
 ├── requirements.txt
 └── README.md
-How It Works
-User enters a YouTube URL
-Transcript is extracted
-Text is summarized
-Summary is displayed
-Audio summary is generated
-Future Improvements
-Support multiple languages
-AI-powered summarization using LLMs
-Export summaries as PDF
-Video chapter generation
-Author
+```
+
+## Workflow
+
+1. Enter a YouTube video URL
+2. Extract video transcript
+3. Generate summary
+4. Display summarized content
+5. Generate audio output
+
+## Installation
+
+```bash
+git clone https://github.com/Harshpoonia/youtube-video-summarizer.git
+
+cd youtube-video-summarizer
+
+pip install -r requirements.txt
+
+streamlit run app.py
+```
+
+## Future Improvements
+
+- Multi-language support
+- AI-powered summarization using LLMs
+- PDF export
+- Chapter-wise summaries
+
+## Author
 
 Harsh Poonia
 
 MCA Student, Thapar Institute of Engineering & Technology
 
-Data Analytics | Machine Learning | Python
+Interested in Data Analytics, Machine Learning, and Software Development.
