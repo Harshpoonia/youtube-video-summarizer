@@ -2,44 +2,50 @@
 
 ## 🎯 Project Vision
 
-Transform the original **BCA Minor Project (YouTube Video Summarizer)** into a modern **AI-powered YouTube Learning Assistant** that helps users learn from educational videos through transcript analysis, AI-generated summaries, conversational question answering, and intelligent study tools.
+Transform the original **BCA Minor Project (YouTube Video Summarizer)** into a modern **AI-Powered YouTube Learning Assistant** that helps users learn from YouTube videos using AI-powered transcript analysis, intelligent summarization, conversational Q&A, and interactive study tools.
 
 ---
 
-# 🚀 Development Roadmap
+# 🚀 Development Progress
 
-## ✅ Phase 0 – Original Project (Completed)
+## ✅ Phase 0 – Original BCA Project (Completed)
 
 * [x] YouTube Video Description Summarizer
-* [x] Text-to-Speech Generation
-* [x] Streamlit Interface
 * [x] YouTube Data API Integration
+* [x] Text-to-Speech Generation
+* [x] Streamlit User Interface
 * [x] Public GitHub Repository
-* [x] Project Documentation
+* [x] Documentation
 
 ---
 
-# 🚀 Phase 1 – AI Learning Assistant (Current)
+# 🚀 Phase 1 – AI Learning Assistant (In Progress)
 
-### 🏗️ Project Architecture
+## 🏗️ Architecture
 
-* [x] Create modular project structure
-* [x] Create development branch
-* [x] Initialize new Streamlit application
-* [ ] Refactor existing codebase
+* [x] Create V2 development branch
+* [x] Modular project structure
+* [x] New Streamlit landing page
+* [x] Project roadmap
+* [ ] Refactor legacy modules
 
 ---
 
-### 📄 Transcript Processing
+## 📄 Transcript Processing
 
-* [ ] Extract complete YouTube transcript
-* [ ] Display transcript inside application
+* [x] Extract complete YouTube transcript
+* [x] Support multiple YouTube URL formats
+* [x] Display transcript inside Streamlit
 * [ ] Download transcript as TXT
+* [ ] Display transcript statistics
+* [ ] Friendly error handling
+* [ ] Language detection
 
 ---
 
-### 📝 AI Summarization
+## 📝 AI Summarization (Next)
 
+* [ ] Integrate Google Gemini API
 * [ ] Quick Summary
 * [ ] Detailed Summary
 * [ ] Student Notes
@@ -47,83 +53,93 @@ Transform the original **BCA Minor Project (YouTube Video Summarizer)** into a m
 
 ---
 
-### 📌 Study Notes
+## 📌 Intelligent Notes
 
-* [ ] Generate Key Points
-* [ ] Highlight Important Concepts
-* [ ] Extract Keywords
-
----
-
-### 🔊 Accessibility
-
-* [ ] Convert AI summary into speech
-* [ ] Audio playback inside Streamlit
+* [ ] Key Points
+* [ ] Important Concepts
+* [ ] Keyword Extraction
+* [ ] Action Items
 
 ---
 
-### 📄 Export
+## 🔊 Audio
 
-* [ ] Download Summary as PDF
-* [ ] Download Key Points as PDF
+* [ ] Convert summary to speech
+* [ ] Audio player
+* [ ] Download MP3
+
+---
+
+## 📄 Export
+
+* [ ] Export Summary as PDF
+* [ ] Export Key Points
+* [ ] Export Complete Notes
 
 ---
 
 # 🤖 Phase 2 – Interactive AI
 
-### 💬 AI Chat Assistant
+## 💬 AI Chat Assistant
 
-* [ ] Ask questions about video content
-* [ ] Context-aware responses
+* [ ] Chat with video
+* [ ] Ask questions from transcript
+* [ ] Context-aware answers
 * [ ] Conversation history
 
 ---
 
-### 🎓 Learning Features
+## 🎓 Study Mode
 
-* [ ] Generate Flashcards
-* [ ] Generate MCQs
-* [ ] Practice Quiz
+* [ ] Flashcards
+* [ ] Quiz Generator
+* [ ] MCQs
+* [ ] Fill-in-the-Blanks
 * [ ] Explain Difficult Concepts
 
 ---
 
-### 🔍 Search
+## 🔍 Search
 
-* [ ] Search within transcript
-* [ ] Jump to relevant sections
+* [ ] Search transcript
+* [ ] Timestamp navigation
+* [ ] Chapter detection
 
 ---
 
-### 🌍 Language Support
+## 🌍 Language Support
 
-* [ ] Translate summaries
-* [ ] Multi-language transcript support
+* [ ] Transcript Translation
+* [ ] Summary Translation
+* [ ] Multi-language support
 
 ---
 
 # 🧠 Phase 3 – Advanced AI
 
-### 📚 Retrieval-Augmented Generation (RAG)
+## Retrieval-Augmented Generation (RAG)
 
-* [ ] Chunk transcript
-* [ ] Generate embeddings
-* [ ] Store embeddings in FAISS
-* [ ] Context-aware AI answers
+* [ ] Transcript chunking
+* [ ] Embeddings
+* [ ] FAISS Vector Database
+* [ ] Semantic Search
+* [ ] Context-aware Responses
 
 ---
 
-### 📈 Analytics
+## 📊 Analytics
 
 * [ ] Video metadata dashboard
-* [ ] Keyword frequency analysis
-* [ ] Reading time estimation
+* [ ] Reading time
+* [ ] Speaking speed
+* [ ] Keyword frequency
+* [ ] Topic analysis
 
 ---
 
-### ☁️ Deployment
+## ☁️ Deployment
 
-* [ ] Environment variable configuration
+* [ ] Environment configuration
 * [ ] Docker support
 * [ ] Streamlit Cloud deployment
 
@@ -132,40 +148,61 @@ Transform the original **BCA Minor Project (YouTube Video Summarizer)** into a m
 # ⭐ Stretch Goals
 
 * [ ] AI Mind Maps
-* [ ] Concept Graph Generation
-* [ ] Timestamped Notes
-* [ ] Bookmark Important Moments
-* [ ] Video Comparison
+* [ ] Concept Graphs
 * [ ] Playlist Summarization
+* [ ] Video Comparison
 * [ ] Research Paper Recommendations
 * [ ] Course Recommendations
+* [ ] Personal Learning History
 
 ---
 
 # 🛠️ Technology Stack
 
-| Category     | Technology             |
-| ------------ | ---------------------- |
-| Frontend     | Streamlit              |
-| Backend      | Python                 |
-| LLM          | Google Gemini API      |
-| Transcript   | youtube-transcript-api |
-| AI           | LangChain              |
-| Vector Store | FAISS                  |
-| Embeddings   | Sentence Transformers  |
-| Speech       | gTTS                   |
-| PDF          | ReportLab              |
+| Category        | Technology             |
+| --------------- | ---------------------- |
+| Frontend        | Streamlit              |
+| Backend         | Python                 |
+| AI              | Google Gemini          |
+| Transcript      | youtube-transcript-api |
+| LLM Framework   | LangChain *(Planned)*  |
+| Vector Database | FAISS *(Planned)*      |
+| Speech          | gTTS                   |
+| PDF             | ReportLab              |
+| Configuration   | python-dotenv          |
 
 ---
 
-# 📌 Current Status
+# 📈 Current Progress
 
-**Version:** 2.0 (In Development)
+## ✅ Completed
 
-**Current Milestone:** Transcript Extraction Module
+* Modular architecture
+* Streamlit V2 interface
+* Transcript extraction
+* Multiple URL support
 
-**Next Milestone:** AI-powered Video Summarization
+## 🚧 Current Sprint
+
+**AI-Powered Summarization with Google Gemini**
+
+## 🎯 Next Milestone
+
+Generate:
+
+* AI Summary
+* Key Points
+* Downloadable Notes
 
 ---
 
-> This roadmap documents the planned evolution of the original BCA Minor Project into a modern AI-powered educational assistant.
+## 📌 Version History
+
+| Version | Status                              |
+| ------- | ----------------------------------- |
+| v1.0    | BCA Minor Project                   |
+| v2.0    | AI Learning Assistant (Development) |
+
+---
+
+> This repository documents the evolution of an undergraduate academic project into a modern AI-powered learning assistant while following modular software engineering practices and incremental feature development.
