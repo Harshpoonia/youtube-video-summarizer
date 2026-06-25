@@ -1,4 +1,5 @@
 import streamlit as st
+from modules.transcript import get_transcript
 
 # Page Configuration
 st.set_page_config(
@@ -44,8 +45,47 @@ youtube_url = st.text_input(
 analyze = st.button("🚀 Analyze Video", use_container_width=True)
 
 if analyze:
+
     if youtube_url:
-        st.success("Video URL received successfully.")
-        st.write("Transcript extraction will be implemented next.")
-    else:
-        st.warning("Please enter a YouTube video URL.")
+
+        with st.spinner("Fetching transcript..."):
+
+            try:
+
+                transcript = get_transcript(youtube_url)
+
+                st.success("Transcript extracted successfully!")
+
+                st.subheader("📄 Video Transcript")
+
+                st.text_area(
+                    label="Transcript",
+                    value=transcript,
+                    height=400
+                )
+
+            except Exception as e:
+
+                error_message = str(e)
+
+                if "Subtitles are disabled" in error_message:
+
+                    st.error(
+                        "❌ This video doesn't have captions available. Please choose another video."
+                    )
+
+                elif "Invalid YouTube URL" in error_message:
+
+                    st.error(
+                        "❌ Please enter a valid YouTube URL."
+                    )
+
+                else:
+
+                    st.error(
+                        "⚠️ Unable to fetch transcript. Please try another video."
+                    )
+
+                    with st.expander("Developer Details"):
+
+                        st.code(error_message)
