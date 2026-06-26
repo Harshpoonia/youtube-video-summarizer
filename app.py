@@ -51,15 +51,55 @@ if analyze:
 
         try:
             with st.spinner("Fetching transcript..."):
-                transcript = get_transcript(youtube_url)
+                transcript_data = get_transcript(youtube_url)
 
             summary_service = SummaryService()
 
-            with st.spinner("Generating AI Summary..."):
-                summary = summary_service.generate_summary(transcript)
+            with st.spinner("🤖 Gemini is analyzing the transcript..."):
+                summary = summary_service.generate_summary(transcript_data)
 
-            st.success("Analysis completed successfully!")
+            st.success("✅ Video analyzed successfully! Transcript extracted and AI summary generated.")
+            
+            language = transcript_data.language.replace(
+                " (auto-generated)",
+                ""
+            )
 
+            col1, col2, col3 = st.columns(3)
+
+            col1.metric(
+                "📝 Words",
+                f"{transcript_data.word_count:,}"
+            )
+
+            col2.metric(
+                "🌐 Language",
+                language
+            )
+
+            col3.metric(
+                "📖 Reading Time",
+                f"{transcript_data.estimated_reading_time} min"
+            )
+
+            col4, col5 = st.columns(2)
+
+            col4.metric(
+                "🔤 Characters",
+                f"{transcript_data.character_count:,}"
+            )
+
+            transcript_type = (
+                "Auto Generated"
+                if "auto" in transcript_data.language.lower()
+                else "Manual"
+            )
+
+            col5.metric(
+                "📄 Transcript",
+                transcript_type
+            )
+            
             tab1, tab2 = st.tabs(
                 [
                     "📄 Transcript",
@@ -70,7 +110,7 @@ if analyze:
             with tab1:
                 st.text_area(
                     "Transcript",
-                    transcript,
+                    transcript_data.transcript,
                     height=450
                 )
 

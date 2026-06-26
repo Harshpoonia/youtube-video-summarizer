@@ -15,14 +15,10 @@ class SummaryService:
             "summary_prompt.txt"
         )
 
-    def generate_summary(self, transcript: str) -> str:
-        """
-        Generate an AI summary from the transcript.
-        """
-
+    def generate_summary(self, transcript_data):
         prompt = self.prompt_template.replace(
             "{transcript}",
-            transcript
+            transcript_data.transcript,
         )
 
         return self.ai.generate(prompt)
