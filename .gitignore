@@ -1,5 +1,68 @@
-venv/
+# ==========================
+# Python
+# ==========================
 __pycache__/
-*.pyc
-output.mp3
-test.mp3
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+.env
+.env.*
+
+# Environment Example (keep tracked)
+!.env.example
+
+# ==========================
+# IDE
+# ==========================
+.vscode/
+.idea/
+
+# ==========================
+# Operating System
+# ==========================
+.DS_Store
+Thumbs.db
+
+# ==========================
+# Python Build / Packaging
+# ==========================
+build/
+dist/
+*.egg-info/
+
+# ==========================
+# Logs
+# ==========================
+*.log
+
+# ==========================
+# Streamlit
+# ==========================
+.streamlit/secrets.toml
+
+# ==========================
+# Generated Project Output
+# ==========================
+output/
+generated/
+temp/
+
+# ==========================
+# Jupyter
+# ==========================
+.ipynb_checkpoints/
+
+# ==========================
+# Testing / Coverage
+# ==========================
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ==========================
+# Misc
+# ==========================
+*.tmp
+*.bak

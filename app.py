@@ -1,5 +1,6 @@
 import streamlit as st
 from modules.transcript import get_transcript
+from modules.summary_service import SummaryService
 
 # Page Configuration
 st.set_page_config(
@@ -48,44 +49,60 @@ if analyze:
 
     if youtube_url:
 
-        with st.spinner("Fetching transcript..."):
-
-            try:
-
+        try:
+            with st.spinner("Fetching transcript..."):
                 transcript = get_transcript(youtube_url)
 
-                st.success("Transcript extracted successfully!")
+            summary_service = SummaryService()
 
-                st.subheader("📄 Video Transcript")
+            with st.spinner("Generating AI Summary..."):
+                summary = summary_service.generate_summary(transcript)
 
+            st.success("Analysis completed successfully!")
+
+            tab1, tab2 = st.tabs(
+                [
+                    "📄 Transcript",
+                    "📝 AI Summary"
+                ]
+            )
+
+            with tab1:
                 st.text_area(
-                    label="Transcript",
-                    value=transcript,
-                    height=400
+                    "Transcript",
+                    transcript,
+                    height=450
                 )
 
-            except Exception as e:
+            with tab2:
+                st.markdown(summary)
 
-                error_message = str(e)
+        except Exception as e:
 
-                if "Subtitles are disabled" in error_message:
+            error_message = str(e)
 
-                    st.error(
-                        "❌ This video doesn't have captions available. Please choose another video."
-                    )
+            if "Subtitles are disabled" in error_message:
 
-                elif "Invalid YouTube URL" in error_message:
+                st.error(
+                    "❌ This video doesn't have captions available. Please choose another video."
+                )
 
-                    st.error(
-                        "❌ Please enter a valid YouTube URL."
-                    )
+            elif "Invalid YouTube URL" in error_message:
 
-                else:
+                st.error(
+                    "❌ Please enter a valid YouTube URL."
+                )
 
-                    st.error(
-                        "⚠️ Unable to fetch transcript. Please try another video."
-                    )
+            else:
 
-                    with st.expander("Developer Details"):
+                st.error(
+                    "⚠️ Unable to fetch transcript. Please try another video."
+                )
 
-                        st.code(error_message)
+                with st.expander("Developer Details"):
+
+                    st.code(error_message)
+
+    else:
+
+        st.warning("⚠️ Please enter a YouTube URL.")
