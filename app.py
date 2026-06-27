@@ -1,7 +1,7 @@
 import streamlit as st
 from modules.transcript import get_transcript
-from modules.summary_service import SummaryService
-
+from modules.learning_service import LearningService
+from utils.markdown_parser import parse_learning_content
 # Page Configuration
 st.set_page_config(
     page_title="YouTube AI Learning Assistant",
@@ -53,10 +53,14 @@ if analyze:
             with st.spinner("Fetching transcript..."):
                 transcript_data = get_transcript(youtube_url)
 
-            summary_service = SummaryService()
+            learning_service = LearningService()
 
             with st.spinner("🤖 Gemini is analyzing the transcript..."):
-                summary = summary_service.generate_summary(transcript_data)
+                learning_content = learning_service.generate_learning_content(transcript_data)
+                
+
+            sections = parse_learning_content(learning_content)
+            
 
             st.success("✅ Video analyzed successfully! Transcript extracted and AI summary generated.")
             
@@ -100,12 +104,13 @@ if analyze:
                 transcript_type
             )
             
-            tab1, tab2 = st.tabs(
-                [
-                    "📄 Transcript",
-                    "📝 AI Summary"
-                ]
-            )
+            tab1, tab2, tab3, tab4, tab5 = st.tabs([
+                "📄 Transcript", 
+                "📝 Summary", 
+                "📌 Key Points", 
+                "📚 Study Notes",
+                "🧠 Concepts"
+                ])
 
             with tab1:
                 st.text_area(
@@ -115,7 +120,34 @@ if analyze:
                 )
 
             with tab2:
-                st.markdown(summary)
+                st.markdown(
+                    sections.get(
+                        "Executive Summary",
+                        "Not available.")
+                )
+            
+            with tab3:
+                st.markdown(
+                    sections.get(
+                        "Key Points",
+                        "Not available."  ) 
+                )    
+            
+            with tab4:
+                st.markdown(
+                    sections.get(
+                        "Study Notes",
+                        "Not available."
+                    )
+                )
+
+            with tab5:
+                st.markdown(
+                    sections.get(
+                        "Important Concepts",
+                        "Not available."
+                    )
+                )
 
         except Exception as e:
 
