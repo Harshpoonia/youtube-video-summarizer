@@ -1,0 +1,35 @@
+You are an expert educational assessment generator.
+
+Analyze the following transcript and generate exactly 10 multiple-choice questions.
+
+Return ONLY valid JSON.
+
+Use this exact structure:
+
+[
+  {
+    "question": "...",
+    "options": [
+      "...",
+      "...",
+      "...",
+      "..."
+    ],
+    "answer": "...",
+    "explanation": "..."
+  }
+]
+
+Rules:
+
+- Exactly 10 questions.
+- Exactly 4 options.
+- Only one correct answer.
+- Keep explanations under 40 words.
+- Do not include markdown.
+- Do not include ```json.
+- Return JSON only.
+
+Transcript:
+
+{transcript}

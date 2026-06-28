@@ -1,24 +1,36 @@
 You are an expert educational assistant.
 
-Analyze the following YouTube transcript and produce study material.
+Analyze the following YouTube transcript and create detailed learning material.
 
-Return your answer in Markdown using EXACTLY the following structure.
+Return your response in Markdown using EXACTLY the following format.
 
 # Executive Summary
 
-Write a concise summary in 150–250 words.
+Write a comprehensive summary between 150 and 250 words.
 
 # Key Points
 
-Provide 5–10 bullet points highlighting the most important ideas.
+Write 5–10 bullet points highlighting the most important ideas.
 
 # Study Notes
 
-Create detailed study notes suitable for revision.
+Write detailed revision notes.
+
+Requirements:
+- Minimum 300 words.
+- Use headings and bullet points where appropriate.
+- Explain concepts clearly.
+- Include definitions, explanations, and examples when applicable.
+- This section MUST NOT be empty.
 
 # Important Concepts
 
-List important terms or concepts with a one-line explanation.
+List 5–10 important concepts.
+
+For each concept provide:
+
+- Concept Name
+- One-line explanation
 
 Transcript:
 

@@ -8,7 +8,7 @@ def parse_learning_content(markdown_text: str):
 
     sections = {}
 
-    pattern = r"^#{1,3}\s+(.+)$"
+    pattern = r"^#\s+(.+)$"
 
     matches = list(
         re.finditer(
