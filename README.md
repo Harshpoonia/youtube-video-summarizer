@@ -1,74 +1,116 @@
 # 🎥 YouTube AI Learning Assistant
 
-> Transform any YouTube video into structured learning material using **Google Gemini AI**.
+> **Transform any YouTube video into structured learning material using Google Gemini AI.**
 
-A modern AI-powered learning assistant that extracts YouTube transcripts and converts them into organized study resources including executive summaries, key points, study notes, and important concepts through a clean, interactive Streamlit interface.
+The **YouTube AI Learning Assistant** is an AI-powered educational application that converts YouTube videos into organized study resources. By combining YouTube transcript extraction with Google's Gemini AI, the application generates comprehensive learning material including summaries, study notes, important concepts, and interactive quizzes.
+
+Originally developed as a **YouTube Video Summarizer** for my BCA Minor Project, this application has been redesigned and expanded into a modular AI-powered learning platform as part of my MCA journey.
 
 ---
 
-## ✨ Features
+# 🚀 Features
 
-### 📺 Transcript Extraction
+## 📺 YouTube Transcript Extraction
 
 * Extract transcripts directly from YouTube videos
 * Supports manually created and auto-generated captions
 * Automatic transcript language detection
-* Graceful handling of unavailable transcripts
+* Handles unavailable transcripts gracefully
 
-### 🤖 AI-Powered Learning Content
+---
 
-Generate high-quality educational resources with a single AI request:
+## 📊 Transcript Analytics Dashboard
 
-* 📝 Executive Summary
-* 📌 Key Points
-* 📚 Study Notes
-* 🧠 Important Concepts
+Automatically generates useful transcript statistics:
 
-### 📊 Transcript Analytics
+* 📝 Word Count
+* 🔤 Character Count
+* 🌐 Language Detection
+* 📖 Estimated Reading Time
 
-Automatically calculates:
+---
 
-* Word Count
-* Character Count
-* Estimated Reading Time
-* Transcript Language
+## 🤖 AI Learning Content
 
-### 🖥️ Interactive Learning Interface
+Generate structured educational material using **Google Gemini**.
 
-* Multi-tab layout
-* Clean dashboard
-* Structured AI output
-* Responsive Streamlit UI
+### 📝 Executive Summary
+
+A concise overview of the video's main ideas.
+
+### 📌 Key Points
+
+Quick bullet-point revision notes.
+
+### 📚 Study Notes
+
+Detailed explanations suitable for revision and learning.
+
+### 🧠 Important Concepts
+
+Important concepts extracted from the transcript with brief explanations.
+
+---
+
+## ❓ Interactive AI Quiz
+
+Test your understanding of the video with automatically generated quizzes.
+
+Features include:
+
+* AI-generated MCQs
+* Four options per question
+* One question at a time
+* Instant answer feedback
+* Explanation for each answer
+* Progress tracking
+* Final score and percentage
+
+---
+
+## 🖥️ Modern User Interface
+
+* Clean Streamlit interface
+* Multi-tab learning experience
+* Interactive quiz interface
+* Persistent application state using Session State
 
 ---
 
 # 🏗️ System Architecture
 
 ```text
-                        User
-                          │
-                          ▼
-                   Streamlit Interface
-                          │
-                          ▼
-                 Transcript Extraction
-                          │
-                          ▼
-                 Transcript Data Model
-                          │
-             ┌────────────┴────────────┐
-             ▼                         ▼
-      Analytics Engine         Learning Service
-                                         │
-                                         ▼
-                                  Google Gemini
-                                         │
-                                         ▼
-                              Markdown Content Parser
-                                         │
-      ┌──────────────┬─────────────┬──────────────┬──────────────┐
-      ▼              ▼             ▼              ▼
- Executive Summary  Key Points  Study Notes  Important Concepts
+                          User
+                            │
+                            ▼
+                    Streamlit Interface
+                            │
+                            ▼
+                  YouTube Transcript API
+                            │
+                            ▼
+                   Transcript Data Model
+                            │
+            ┌───────────────┴────────────────┐
+            ▼                                ▼
+     Learning Service                  Quiz Service
+            │                                │
+            ▼                                ▼
+      Google Gemini API               Google Gemini API
+            │                                │
+            ▼                                ▼
+    Markdown Learning Content          JSON Quiz Output
+            │                                │
+            ▼                                ▼
+    Markdown Parser                  Quiz Parser
+            │                                │
+            └───────────────┬────────────────┘
+                            ▼
+                   Streamlit Dashboard
+                            │
+      ┌─────────┬──────────┬──────────┬──────────┬─────────┐
+      ▼         ▼          ▼          ▼          ▼         ▼
+ Transcript  Summary   Key Points  Study Notes Concepts   Quiz
 ```
 
 ---
@@ -88,46 +130,51 @@ youtube-ai-learning-assistant/
 ├── modules/
 │   ├── ai_service.py
 │   ├── learning_service.py
+│   ├── quiz_service.py
 │   └── transcript.py
 │
 ├── models/
-│   └── transcript_model.py
+│   ├── transcript_model.py
+│   └── quiz_model.py
 │
 ├── prompts/
-│   └── learning_prompt.txt
+│   ├── learning_prompt.txt
+│   └── quiz_prompt.txt
 │
 ├── utils/
 │   ├── markdown_parser.py
-│   ├── prompt_loader.py
-│   └── text_statistics.py
+│   ├── quiz_parser.py
+│   └── prompt_loader.py
 │
 └── assets/
 ```
 
 ---
 
-# ⚙️ Tech Stack
+# ⚙️ Technology Stack
 
-| Category       | Technology             |
-| -------------- | ---------------------- |
-| Language       | Python                 |
-| Frontend       | Streamlit              |
-| AI Model       | Google Gemini          |
-| Transcript API | youtube-transcript-api |
-| Environment    | python-dotenv          |
-| Text-to-Speech | gTTS                   |
+| Category        | Technology             |
+| --------------- | ---------------------- |
+| Language        | Python                 |
+| Frontend        | Streamlit              |
+| AI              | Google Gemini          |
+| Transcript API  | youtube-transcript-api |
+| Environment     | python-dotenv          |
+| Version Control | Git & GitHub           |
 
 ---
 
 # 🚀 Installation
 
-## Clone the Repository
+## Clone Repository
 
 ```bash
 git clone https://github.com/Harshpoonia/youtube-ai-learning-assistant.git
 
 cd youtube-ai-learning-assistant
 ```
+
+---
 
 ## Create Virtual Environment
 
@@ -147,19 +194,25 @@ venv\Scripts\activate
 source venv/bin/activate
 ```
 
+---
+
 ## Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
+---
+
 ## Configure Environment Variables
 
-Create a `.env` file in the project root.
+Create a `.env` file.
 
 ```env
-GEMINI_API_KEY=YOUR_API_KEY_HERE
+GEMINI_API_KEY=YOUR_API_KEY
 ```
+
+---
 
 ## Run the Application
 
@@ -172,71 +225,85 @@ python -m streamlit run app.py
 # 📖 How It Works
 
 1. Paste a YouTube video URL.
-2. The application extracts the transcript.
-3. Transcript statistics are calculated.
-4. Google Gemini analyzes the transcript.
-5. AI-generated learning resources are parsed into structured sections.
-6. The content is displayed through dedicated learning tabs.
+2. Extract the transcript.
+3. Calculate transcript statistics.
+4. Generate AI learning material using Google Gemini.
+5. Parse structured Markdown output.
+6. Generate an interactive AI quiz.
+7. Display everything through a clean Streamlit interface.
 
 ---
 
 # 📈 Project Evolution
 
-This repository began as my **BCA Minor Project**, where the goal was to generate a basic summary from YouTube videos.
+This repository represents the evolution of my original BCA Minor Project.
 
-During my MCA, I redesigned and significantly expanded the application into a modular AI-powered learning assistant.
+The project has grown from a simple summarizer into a modular AI learning platform.
 
-## Evolution
-
-| Original Version         | Current Version                                                 |
+| Original Project         | Current Project                                                 |
 | ------------------------ | --------------------------------------------------------------- |
 | YouTube Video Summarizer | YouTube AI Learning Assistant                                   |
 | Single Summary           | Executive Summary, Key Points, Study Notes & Important Concepts |
-| Monolithic Structure     | Modular Service-Oriented Architecture                           |
-| Basic UI                 | Dashboard + Multi-Tab Interface                                 |
-| Basic NLP                | Google Gemini Integration                                       |
+| Static Output            | Interactive AI Quiz                                             |
+| Monolithic Code          | Modular Service-Oriented Architecture                           |
+| Basic Interface          | Multi-Tab Learning Dashboard                                    |
+| Basic NLP                | Google Gemini AI                                                |
 
-The project now follows modern software engineering practices including modular architecture, reusable services, feature branches, pull requests, and continuous feature-based development.
+---
+
+# 📌 Current Features
+
+* ✅ Transcript Extraction
+* ✅ Transcript Analytics Dashboard
+* ✅ Executive Summary
+* ✅ Key Points
+* ✅ Study Notes
+* ✅ Important Concepts
+* ✅ Interactive AI Quiz
+* ✅ Google Gemini Integration
+* ✅ Markdown Parsing
+* ✅ JSON Quiz Parsing
+* ✅ Session State Management
+* ✅ Modular Project Architecture
 
 ---
 
 # 📷 Screenshots
 
-> Screenshots and demo GIF will be added after UI polishing.
+Screenshots and demo GIFs will be added after the UI polishing phase.
+
+Planned screenshots:
+
+* Home Screen
+* Transcript Dashboard
+* Executive Summary
+* Study Notes
+* Quiz Interface
+* Quiz Results
 
 ---
 
 # 🚧 Current Limitations
 
 * Videos without captions cannot be processed.
-* Private, age-restricted, or restricted videos may not expose transcripts.
-* Multi-language learning support is planned for a future release.
+* Private or age-restricted videos may not expose transcripts.
+* YouTube may temporarily rate-limit transcript requests.
+* Multi-language learning support is planned for future versions.
 
 ---
 
-# 🛣️ Roadmap
+# 🛣️ Future Roadmap
 
-### ✅ Completed
+Upcoming features include:
 
-* Transcript Extraction
-* Transcript Analytics Dashboard
-* Executive Summary
-* Key Points
-* Study Notes
-* Important Concepts
-* Google Gemini Integration
-* Markdown Parser
-* Modular Architecture
-
-### 🚧 In Progress
-
-* AI Quiz Generator
-* Flashcards
-* Chat with Video
-* PDF Export
-* Text-to-Speech
-* Multi-language Support
-* Timestamp Navigation
+* 🗂️ Flashcards
+* 💬 Chat with Video
+* 📄 PDF Export
+* 🔊 Text-to-Speech
+* 🌍 Multi-language Support
+* ⏱️ Timestamp Navigation
+* 🧠 AI Tutor Mode
+* 📈 Learning Progress Tracking
 
 For the complete roadmap, see **PROJECT_ROADMAP.md**.
 
@@ -246,7 +313,7 @@ For the complete roadmap, see **PROJECT_ROADMAP.md**.
 
 Contributions, suggestions, and feature requests are welcome.
 
-If you'd like to improve this project, feel free to fork the repository and submit a pull request.
+If you find a bug or have an idea for improvement, feel free to open an issue or submit a pull request.
 
 ---
 
@@ -260,6 +327,9 @@ This project is licensed under the MIT License.
 
 **Harsh Poonia**
 
-MCA Student | Data Analytics | Machine Learning | Artificial Intelligence
+**MCA Student**
+Artificial Intelligence • Machine Learning • Data Analytics
 
-If you found this project helpful, consider giving it a ⭐ on GitHub.
+This project reflects my journey from a college academic project to a portfolio-focused AI application, emphasizing clean architecture, modular design, and practical use of Generative AI.
+
+If you found this project helpful or interesting, consider giving it a ⭐ on GitHub.
