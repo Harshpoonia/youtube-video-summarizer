@@ -1,4 +1,4 @@
-from models.transcript_model import TranscriptData
+from models.transcript import TranscriptData
 from modules.quiz_service import QuizService
 
 dummy = TranscriptData(
