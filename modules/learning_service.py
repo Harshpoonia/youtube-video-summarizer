@@ -1,24 +1,43 @@
+"""
+modules/learning_service.py
+
+LearningService is responsible for:
+- Loading the learning prompt template
+- Sending the transcript to Gemini via AIService
+- Returning structured LearningContent
+
+Markdown parsing is delegated to utils/markdown_parser.py.
+Prompt text itself lives in prompts/learning_prompt.txt.
+"""
+
+from config import settings
+from models.learning_content import LearningContent
+from models.transcript import TranscriptData
 from modules.ai_service import AIService
+from utils.markdown_parser import parse_learning_markdown
 from utils.prompt_loader import load_prompt
+from utils.text_cleaning import truncate_text
 
 
 class LearningService:
-    """
-    Generates AI-powered learning content from a transcript.
-    """
+    """Generates structured learning material from a transcript."""
 
-    def __init__(self):
-        self.ai = AIService()
-        self.prompt_template = load_prompt("learning_prompt.txt")
+    def __init__(self, ai_service: AIService | None = None) -> None:
+        self._ai_service = ai_service or AIService()
 
-    def generate_learning_content(self, transcript_data) -> str:
+    def generate_learning_content(self, transcript_data: TranscriptData) -> LearningContent:
         """
-        Generate structured learning material from a transcript.
-        """
+        Generate Executive Summary, Key Points, Study Notes, and
+        Important Concepts from a transcript.
 
-        prompt = self.prompt_template.replace(
-            "{transcript}",
-            transcript_data.transcript
+        Raises ValueError if Gemini's output cannot be parsed into
+        the expected section structure.
+        """
+        transcript_text = truncate_text(
+            transcript_data.cleaned_text, settings.max_transcript_chars
         )
 
-        return self.ai.generate(prompt)
+        prompt = load_prompt("learning_prompt.txt", transcript=transcript_text)
+        raw_markdown = self._ai_service.generate(prompt, temperature=0.5)
+
+        return parse_learning_markdown(raw_markdown)

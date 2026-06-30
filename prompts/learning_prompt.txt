@@ -1,37 +1,28 @@
-You are an expert educational assistant.
+You are an expert educational content creator. Your task is to transform the following video transcript into clear, structured learning material.
 
-Analyze the following YouTube transcript and create detailed learning material.
+Use the transcript content only. Do not invent facts that are not supported by the transcript.
 
-Return your response in Markdown using EXACTLY the following format.
+Produce Markdown output using EXACTLY these four top-level headings, in this order:
 
 # Executive Summary
-
-Write a comprehensive summary between 150 and 250 words.
+A concise 3-5 sentence overview of what this video covers and why it matters.
 
 # Key Points
-
-Write 5–10 bullet points highlighting the most important ideas.
+A bulleted list of the most important takeaways from the video (aim for 5-10 points).
 
 # Study Notes
-
-Write detailed revision notes.
-
-Requirements:
-- Minimum 300 words.
-- Use headings and bullet points where appropriate.
-- Explain concepts clearly.
-- Include definitions, explanations, and examples when applicable.
-- This section MUST NOT be empty.
+Detailed, well-organized notes a student could use to study this material. You may use nested headings (##, ###) and sub-bullets within this section, but do not introduce any additional top-level (#) headings.
 
 # Important Concepts
+A bulleted list of key terms, definitions, or concepts introduced in the video. Format each as **Term**: definition.
 
-List 5–10 important concepts.
-
-For each concept provide:
-
-- Concept Name
-- One-line explanation
+Rules:
+- Only use the four top-level headings listed above, each starting with a single "#".
+- Do not add any other top-level headings.
+- Do not include any text before "# Executive Summary" or after the end of "# Important Concepts".
+- Write in clear, educational language suitable for a student learning this topic for the first time.
 
 Transcript:
-
+"""
 {transcript}
+"""
