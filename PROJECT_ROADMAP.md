@@ -4,19 +4,19 @@
 
 ## 🎯 Project Vision
 
-Build a complete AI-powered learning platform that transforms YouTube videos into interactive educational resources using Generative AI.
+Build a production-quality AI-powered learning platform that transforms YouTube videos into structured educational resources using Generative AI.
 
-The long-term objective is to enable users to **learn, revise, practice, and interact** with educational video content from a single application.
+The platform is designed to help users **learn, revise, practice, and interact** with educational content rather than simply summarize videos.
 
 ---
 
-# 📌 Current Project Status
+# 📌 Current Status
 
-**Current Version:** **v2.1**
+**Current Version:** **v2.2**
 
-**Development Status:** 🟢 Active Development
+**Status:** 🟢 Active Development
 
-**Architecture:** Modular Service-Oriented Design
+**Architecture:** Modular Service-Oriented Architecture
 
 ---
 
@@ -24,10 +24,10 @@ The long-term objective is to enable users to **learn, revise, practice, and int
 
 ## Initial Project
 
-* [x] Basic YouTube Video Summarizer
+* [x] YouTube Video Summarizer
 * [x] Transcript Extraction
 * [x] Basic Streamlit Interface
-* [x] Simple AI Summary
+* [x] AI Summary Generation
 * [x] Initial Project Structure
 
 ---
@@ -40,10 +40,10 @@ The long-term objective is to enable users to **learn, revise, practice, and int
 * [x] Service-Oriented Architecture
 * [x] AI Service Layer
 * [x] Learning Service
-* [x] Prompt Loader
+* [x] Prompt Management
 * [x] Transcript Data Model
-* [x] Environment Configuration
 * [x] Markdown Parser
+* [x] Environment Configuration
 
 ---
 
@@ -51,10 +51,10 @@ The long-term objective is to enable users to **learn, revise, practice, and int
 
 * [x] YouTube Transcript Extraction
 * [x] Automatic Language Detection
-* [x] Transcript Analytics
 * [x] Word Count
 * [x] Character Count
 * [x] Reading Time Estimation
+* [x] Transcript Analytics Dashboard
 
 ---
 
@@ -72,24 +72,23 @@ The long-term objective is to enable users to **learn, revise, practice, and int
 
 * [x] Multi-Tab Interface
 * [x] Transcript Viewer
-* [x] Learning Dashboard
 * [x] Analytics Cards
 * [x] Error Handling
 
 ---
 
-# ✅ Version 2.1 — Interactive Quiz System (Completed)
+# ✅ Version 2.1 — Interactive Quiz (Completed)
 
 ## Quiz Engine
 
 * [x] Quiz Service
-* [x] Quiz Data Model
+* [x] Quiz Model
+* [x] Quiz Prompt
 * [x] JSON Quiz Parser
-* [x] Quiz Prompt Template
 
 ---
 
-## Interactive Quiz
+## Quiz Features
 
 * [x] AI-generated Multiple Choice Questions
 * [x] Four Options Per Question
@@ -99,79 +98,69 @@ The long-term objective is to enable users to **learn, revise, practice, and int
 * [x] Answer Explanation
 * [x] Progress Tracking
 * [x] Final Score
-* [x] Percentage Calculation
+* [x] Session State Support
 
 ---
 
-## Application Improvements
-
-* [x] Streamlit Session State
-* [x] Persistent Analysis Results
-* [x] Persistent Quiz State
-* [x] Refactored App Architecture
-* [x] Improved User Experience
-
----
-
-# 🚧 Version 2.2 — AI Revision Tools
+# ✅ Version 2.2 — Flashcards & Architecture Refactor (Completed)
 
 ## Flashcards
 
-* [ ] AI Flashcards
-* [ ] Front & Back Cards
-* [ ] Flip Animation
-* [ ] Shuffle Cards
-* [ ] Review Mode
+* [x] Flashcard Service
+* [x] Flashcard Model
+* [x] Flashcard Prompt
+* [x] Flashcard Parser
+* [x] AI-generated Flashcards
+* [x] Interactive Flashcard UI
+* [x] Sequential Navigation
 
 ---
 
-## Revision Features
+## Major Refactor
 
-* [ ] Quick Revision Notes
-* [ ] Key Formula Sheet
-* [ ] Important Definitions
-* [ ] Common Interview Questions
-
----
-
-## Download Options
-
-* [ ] Download Flashcards
-* [ ] Download Quiz
-* [ ] Copy Notes
-* [ ] Export Learning Content
+* [x] Centralized Configuration (`config.py`)
+* [x] Dedicated AI Service
+* [x] Improved Folder Structure
+* [x] Centralized Prompt Loading
+* [x] Better Error Handling
+* [x] Improved Session State Management
+* [x] Cleaner Separation of Concerns
+* [x] Refactored Business Logic
+* [x] Reusable Utility Modules
 
 ---
 
-# 🚧 Version 2.3 — AI Tutor
+# 🚧 Version 2.3 — AI Chat with Video
 
-## Chat with Video
+## Chat Experience
 
-* [ ] Ask Questions
-* [ ] Follow-up Questions
+* [ ] Ask Questions About the Video
 * [ ] Context-Aware Responses
+* [ ] Multi-turn Conversations
 * [ ] Conversation History
+* [ ] Suggested Questions
+* [ ] Source-aware Responses
 
 ---
 
-## Learning Assistant
+## AI Tutor
 
 * [ ] Explain Concepts
 * [ ] Explain Like I'm 5
 * [ ] Give Examples
 * [ ] Compare Concepts
-* [ ] Generate Analogies
+* [ ] Create Practice Questions
 
 ---
 
-# 🚧 Version 2.4 — Productivity Features
+# 🚧 Version 2.4 — Export & Accessibility
 
 ## Export
 
 * [ ] PDF Export
-* [ ] Printable Study Notes
+* [ ] Study Notes Export
 * [ ] Quiz Report
-* [ ] Learning Summary Report
+* [ ] Flashcard Export
 
 ---
 
@@ -179,140 +168,121 @@ The long-term objective is to enable users to **learn, revise, practice, and int
 
 * [ ] Text-to-Speech
 * [ ] Audio Summary
-* [ ] Listen to Notes
-* [ ] Playback Controls
+* [ ] Audio Study Notes
+* [ ] Audio Flashcards
 
 ---
 
-# 🚧 Version 2.5 — Advanced Learning
+# 🚧 Version 2.5 — Smarter Learning
 
-## Multi-language Support
+## Personal Learning
 
-* [ ] Automatic Translation
-* [ ] Learning Language Selection
-* [ ] Bilingual Notes
-* [ ] Multi-language Quiz
-
----
-
-## Smart Navigation
-
-* [ ] Timestamp Navigation
-* [ ] Topic Navigation
-* [ ] Jump to Relevant Video Sections
+* [ ] Bookmark Concepts
+* [ ] Save Learning Sessions
+* [ ] Learning History
+* [ ] Resume Previous Sessions
 
 ---
 
-# 🚧 Version 3.0 — AI Learning Platform
+## AI Improvements
+
+* [ ] Adaptive Quiz Difficulty
+* [ ] Personalized Flashcards
+* [ ] Topic Recommendations
+* [ ] Smart Revision Mode
+
+---
+
+# 🚧 Version 3.0 — Complete AI Learning Platform
+
+## User Experience
+
+* [ ] User Authentication
+* [ ] User Profiles
+* [ ] Personalized Dashboard
+* [ ] Learning Streaks
+* [ ] Achievements
+
+---
 
 ## Intelligent Learning
 
 * [ ] RAG-based Question Answering
-* [ ] Personalized Learning
-* [ ] Learning History
-* [ ] Bookmark Important Topics
-* [ ] Saved Learning Sessions
+* [ ] Semantic Transcript Search
+* [ ] Personalized AI Tutor
+* [ ] Learning Progress Analytics
 
 ---
 
-## User Experience
-
-* [ ] User Accounts
-* [ ] Progress Tracking
-* [ ] Learning Streaks
-* [ ] Achievement System
-* [ ] Personalized Dashboard
-
----
-
-## AI Enhancements
-
-* [ ] AI Tutor Mode
-* [ ] Personalized Quiz Difficulty
-* [ ] Adaptive Learning
-* [ ] Topic Recommendations
-
----
-
-## Deployment
+## Production Readiness
 
 * [ ] Docker Support
-* [ ] Cloud Deployment
 * [ ] CI/CD Pipeline
-* [ ] Production Configuration
+* [ ] Automated Testing
+* [ ] Logging & Monitoring
+* [ ] Caching Layer
+* [ ] Deployment to Cloud
 
 ---
 
-# 🔬 Technical Improvements
+# 🔧 Technical Improvements
 
-## Code Quality
+## Reliability
 
-* [ ] Unit Testing
-* [ ] Integration Testing
-* [ ] Logging
-* [ ] Configuration Management
-* [ ] API Rate Limiting
-* [ ] Caching
+* [ ] Better Gemini API Retry Logic
+* [ ] Quota-aware Request Handling
+* [ ] Intelligent Response Caching
+* [ ] API Health Monitoring
 
 ---
 
 ## Performance
 
-* [ ] Faster Transcript Processing
-* [ ] AI Response Caching
-* [ ] Optimized Prompt Management
-* [ ] Lazy Loading
-* [ ] Performance Monitoring
+* [ ] Transcript Chunking for Long Videos
+* [ ] Optimized Prompt Token Usage
+* [ ] Faster Parsing
+* [ ] Background Processing
 
 ---
 
-# 📈 Learning Roadmap
+## Testing
 
-```text
-YouTube Video
-        │
-        ▼
-Transcript Extraction
-        │
-        ▼
-Analytics Dashboard
-        │
-        ▼
-AI Learning Content
-        │
-        ├───────────────┐
-        ▼               ▼
-Study Material      Interactive Quiz
-        │               │
-        └──────┬────────┘
-               ▼
-          Flashcards
-               │
-               ▼
-         AI Tutor Chat
-               │
-               ▼
-          Export & Share
-               │
-               ▼
-      Personalized Learning
-```
+* [ ] Unit Tests
+* [ ] Integration Tests
+* [ ] End-to-End Tests
+* [ ] GitHub Actions Workflow
 
 ---
 
-# 🏆 Long-Term Vision
+# 📈 Development Timeline
 
-The goal of this project is to evolve from a simple **YouTube Video Summarizer** into a comprehensive **AI Learning Platform**.
+| Version | Status         |
+| ------- | -------------- |
+| v1.0    | ✅ Completed    |
+| v2.0    | ✅ Completed    |
+| v2.1    | ✅ Completed    |
+| v2.2    | ✅ Completed    |
+| v2.3    | 🚧 In Progress |
+| v2.4    | 📅 Planned     |
+| v2.5    | 📅 Planned     |
+| v3.0    | 🎯 Vision      |
 
-The final application will allow users to:
+---
 
-* 📖 Learn from any educational YouTube video
+# 🎯 Long-Term Vision
+
+The goal is to evolve this project from a simple **YouTube Video Summarizer** into a **comprehensive AI-powered learning platform**.
+
+The completed platform will enable users to:
+
+* 📺 Learn from any educational YouTube video
 * 📝 Generate structured study material
 * 🧠 Understand important concepts
-* ❓ Test knowledge through AI-generated quizzes
-* 🗂️ Revise using flashcards
-* 💬 Ask questions to an AI tutor
-* 📄 Export notes and reports
+* ❓ Test knowledge with AI-generated quizzes
+* 🗂️ Revise using AI-generated flashcards
+* 💬 Chat with an AI tutor using transcript context
+* 📄 Export learning materials
+* 🔊 Listen to AI-generated study content
 * 📈 Track learning progress over time
 
-The project also serves as a demonstration of modern software engineering practices, including modular architecture, service-oriented design, prompt engineering, AI integration, session state management, and feature-driven development.
+This project also serves as a showcase of modern software engineering practices, including modular architecture, service-oriented design, prompt engineering, AI integration, session state management, scalable project organization, and production-ready Python development.
